@@ -23,11 +23,19 @@ class SampleValidatorBuilderTest extends TestCase
 
         $this->okInputs = [
             'name' => 'abc',
+            'tel-jp' => '0612345678',
         ];
 
         $this->testInputs = [
             'name' => [
                 '' => false,
+            ],
+            'tel-jp' => [
+                '' => true,
+                '09012345678' => true,
+                '090123456789' => false,
+                '090123456' => false,
+                '０9012345678' => false,
             ],
         ];
     }

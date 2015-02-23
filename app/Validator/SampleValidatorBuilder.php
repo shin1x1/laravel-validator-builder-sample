@@ -20,6 +20,7 @@ class SampleValidatorBuilder implements ValidatorBuilder
             $inputs,
             [
                 'name' => 'required',
+                'tel-jp' => 'regex:/\A[0-9]{10,11}\z/',
             ]
         );
     }
